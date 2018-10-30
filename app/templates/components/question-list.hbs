@@ -1,0 +1,48 @@
+<div class="question-list-container">
+  <section class="flip-container">
+    <div id="card">
+      <figure class="active">
+        <div class="question">
+          <p class="question-title">Question Title</p>
+          <p class="question-description">Question Description</p>
+          <textarea rows="5"></textarea>
+        </div>
+      </figure>
+      <figure>
+        <div class="question">
+          <p class="question-title">Question Title</p>
+          <p class="question-description">Question Description</p>
+          <div class="question-options-multiple">
+            <input type="checkbox" value="option1"> Option 1
+            <br>
+            <input type="checkbox" value="option2"> Option 2
+            <br>
+            <input type="checkbox" value="option3"> Option 3
+            <br>
+            <input type="checkbox" value="option4"> Option 4
+            <br>
+          </div>
+        </div>
+      </figure>
+      <figure>
+        <div class="question">
+          <p class="question-title">Question Title</p>
+          <p class="question-description">Question Description</p>
+          <div class="question-options-single">
+            <input type="radio" name="single" value="option1"> Option 1
+            <br>
+            <input type="radio" name="single" value="option2"> Option 2
+            <br>
+            <input type="radio" name="single" value="option3"> Option 3
+            <br>
+            <input type="radio" name="single" value="option4"> Option 4
+            <br>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+</div>
+
+<button {{action 'handlePrevious'}} id="previous">Previous</button>
+<button {{action 'handleNext'}} id="next">Next</button>

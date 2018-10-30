@@ -1,0 +1,112 @@
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  height: 20%;
+  background: #eee;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8633BD), color-stop(100%, #3C44BA));
+  background: -webkit-linear-gradient(87deg, #3C44BA 0%, #8633BD 100%);
+  background: -o-linear-gradient(87deg, #3C44BA 0%, #8633BD 100%);
+  background: -ms-linear-gradient(87deg, #3C44BA 0%, #8633BD 100%);
+  background: linear-gradient(3deg, #3C44BA 0%, #8633BD 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8633BD', endColorstr='#3C44BA',GradientType=0 );
+  -webkit-box-shadow: 1px 0px 21px 0px rgba(122,122,122,1);
+  -moz-box-shadow: 1px 0px 21px 0px rgba(122,122,122,1);
+  box-shadow: 1px 0px 21px 0px rgba(122,122,122,1);
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  margin: 0 40px;
+}
+
+#logo{
+  height: 100%;
+  font-family: 'Yesteryear', cursive;
+  font-weight: 100;
+  font-size: 40px;
+  color: white;
+}
+
+figure {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.flip-container {
+  width: 200px;
+  height: 260px;
+  position: relative;
+  margin: 0 auto 40px;
+  border: 1px solid #ffffff;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#card figure {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: blue;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#card .turnedLeft {
+  -webkit-transform: rotateY( -180deg );
+  -moz-transform: rotateY( -180deg );
+  -o-transform: rotateY( -180deg );
+  transform: rotateY( -180deg );
+}
+
+#card .turnedRight {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+#card .active {
+  -webkit-transform: rotateY( 0deg );
+  -moz-transform: rotateY( 0deg );
+  -o-transform: rotateY( 0deg );
+  transform: rotateY( 0deg );
+}
