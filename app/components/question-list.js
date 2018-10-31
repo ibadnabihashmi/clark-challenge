@@ -34,11 +34,12 @@ export default Component.extend({
       }
     }
   },
-  didRender() {
-    
-  },
   didInsertElement() {
     this._super(...arguments);
-    this.set('slides', $("#card").children());
+    const slides = $("#card").children();
+    for (let i=1;i<slides.length;i++) {
+      $(slides[i]).removeClass('active');
+    }
+    this.set('slides', slides);
   }
 });

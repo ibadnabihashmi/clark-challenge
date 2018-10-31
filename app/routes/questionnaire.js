@@ -10,7 +10,12 @@ export default Route.extend({
                     question.isText = true;
                 }
                 if (question.question_type === "multiple-choice") {
+                  if (question.multiple === "true") {
                     question.isMultipleChoice = true
+                  }
+                  if (question.multiple === "false") {
+                    question.isSingleChoice = true
+                  }
                 }
                 return question;
             });
