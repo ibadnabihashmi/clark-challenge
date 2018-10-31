@@ -2,60 +2,51 @@
   <section class="flip-container">
     <div id="card">
       {{#each questions as |question|}}
-      {{index}}
-      <figure class="active">
-        <div class="question">
-          <p class="question-title">{{question.headline}}</p>
-          <p class="question-description">{{question.description}}</p>
-          {{#if question.isText}}
-          <textarea rows="5" placeholder="Type Here...."></textarea>
-          {{/if}}
-          {{#if question.isMultipleChoice}}
-          <div class="question-options-multiple">
-            {{#each question.choices as |choice|}}
-            <p>{{input type="checkbox" class="form-checkbox" name=question.identifier checked=choice.selected}}<label for="check-one">{{choice.label}}</label></p>
-            {{/each}}
+        <figure class="active">
+          <div class="question">
+            <p class="question-title">{{question.headline}}</p>
+            <p class="question-description">{{question.description}}</p>
+            {{#if question.isText}}
+              <textarea rows="5" placeholder="Type Here...."></textarea>
+            {{/if}}
+            {{#if question.isMultipleChoice}}
+              <div class="question-options-multiple">
+                {{#each question.choices as |choice|}}
+                  <p>
+                    {{input 
+                      type="checkbox" 
+                      class="form-checkbox" 
+                      name=question.identifier 
+                      checked=choice.selected
+                    }}
+                    <label for="check-one">{{choice.label}}</label>
+                  </p>
+                {{/each}}
+              </div>
+            {{/if}}
+            {{#if question.isSingleChoice}}
+              <div class="question-options-single">
+                {{#each question.choices as |choice|}}
+                  <p>
+                    {{input 
+                      type="radio" 
+                      class="form-radio" 
+                      name=question.identifier 
+                      checked=choice.selected
+                    }}
+                    <label for="radio-one">{{choice.label}}</label>
+                  </p>
+                {{/each}}
+              </div>
+            {{/if}}
           </div>
-          {{/if}}
-          {{#if question.isSingleChoice}}
-          <div class="question-options-single">
-            {{#each question.choices as |choice|}}
-            <p>{{input type="radio" class="form-radio" name=question.identifier checked=choice.selected}}<label for="radio-one">{{choice.label}}</label></p>
-            {{/each}}
-          </div>
-          {{/if}}
-        </div>
-      </figure>
+        </figure>
       {{/each}}
-      {{!-- <figure>
-        <div class="question">
-          <p class="question-title">Question Title</p>
-          <p class="question-description">Question Description</p>
-          <div class="question-options-multiple">
-            <p><input type="checkbox" class="form-checkbox" value="option1"><label for="check-one">Option 1</label></p>
-            <p><input type="checkbox" class="form-checkbox" value="option2"><label for="check-one">Option 2</label></p>
-            <p><input type="checkbox" class="form-checkbox" value="option3"><label for="check-one">Option 3</label></p>
-            <p><input type="checkbox" class="form-checkbox" value="option4"><label for="check-one">Option 4</label></p>
-          </div>
-        </div>
-      </figure>
-      <figure>
-        <div class="question">
-          <p class="question-title">Question Title</p>
-          <p class="question-description">Question Description</p>
-          <div class="question-options-single">
-            <p><input type="radio" name="demo" value="option1" class="form-radio"><label for="radio-one">Option 1</label></p>
-            <p><input type="radio" name="demo" value="option2" class="form-radio"><label for="radio-one">Option 2</label></p>
-            <p><input type="radio" name="demo" value="option3" class="form-radio"><label for="radio-one">Option 3</label></p>
-            <p><input type="radio" name="demo" value="option4" class="form-radio"><label for="radio-one">Option 4</label></p>
-          </div>
-        </div>
-      </figure> --}}
     </div>
   </section>
 </div>
 
 <div class="action-container">
-  <button {{action "handlePrevious"}} class="gradient-button next-button">Previous</button>
-  <button {{action "handleNext"}} class="gradient-button previous-button">Next</button>
+  <button {{action "handlePrevious"}} class="gradient-button previous-button">Previous</button>
+  <button {{action "handleNext"}} class="gradient-button next-button">Next</button>
 </div>

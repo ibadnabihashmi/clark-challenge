@@ -237,3 +237,55 @@ label {
 }
 .next-button, .previous-button {background-image: linear-gradient(to right, #5a66bb 0%, #4389A2 51%, #5a66bb 100%)}
 .next-button:hover, .previous-button:hover { background-position: right center; }
+
+@media screen and (max-width: 768px) {
+  .gradient-button {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .main-title h1 {
+    font-size: 30px;
+    word-break: break-all;
+  }
+  .main-title h3 {
+    font-size: 14px;
+  }
+  .flip-container {
+    width: 100%;
+  }
+  .action-container {
+    width: 100%;
+  }
+  .gradient-button {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .question-title {
+    font-size: 26px;
+  }
+  .question-description {
+    font-size: 14px;
+  }
+  .question-options-multiple p, .question-options-single p {
+    margin: 0px 0px 0px 35px;
+    padding: 5px 0px 20px 0px;
+  }
+  label {
+    font-size: 15px;
+  }
+  .form-radio, .form-checkbox {
+    height: 20px;
+    width: 20px;
+  }
+  #logo {
+    font-size: 29px;
+  }
+  .form-radio:checked::before, .form-checkbox:checked::before {
+    left: 6px;
+    top: 3px;
+  }
+}

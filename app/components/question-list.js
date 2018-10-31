@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import $ from 'jquery';
 
 export default Component.extend({
-  r: 1,
+  current: 1,
   slides: null,
   init() {
     this._super(...arguments);
@@ -10,27 +10,27 @@ export default Component.extend({
   actions: {
     handleNext() {
       let slides = this.get('slides');
-      let r = this.get('r');
-      if (r < slides.length) {
+      let current = this.get('current');
+      if (current < slides.length) {
         let activeSlide = $(".active");
         activeSlide.addClass("turnedLeft");
         activeSlide.removeClass("active");
         activeSlide.removeClass("turnedRight");
         activeSlide.next().addClass("active");
-        r++;
-        this.set('r', r);
+        current++;
+        this.set('current', current);
       }
     },
     handlePrevious() {
-      let r = this.get('r');
-      if (r > 1) {
+      let current = this.get('current');
+      if (current > 1) {
         let activeSlide = $(".active");
         activeSlide.addClass("turnedRight");
         activeSlide.removeClass("active");
         activeSlide.removeClass("turnedLeft");
         activeSlide.prev().addClass("active");
-        r--;
-        this.set('r', r);
+        current--;
+        this.set('current', current);
       }
     }
   },
