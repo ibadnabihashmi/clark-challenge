@@ -35,6 +35,10 @@ export default Component.extend({
     }
   },
   didRender() {
+    
+  },
+  didInsertElement() {
+    this._super(...arguments);
     this.set('slides', $("#card").children());
   }
 });

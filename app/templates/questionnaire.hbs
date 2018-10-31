@@ -1,7 +1,8 @@
 <div class="container">
   <div class="main-title">
-    <h1>Questionnaire Title</h1>
-    <h3>Questionnaire Description</h3>
+    <h1>{{model.questionnaire.name}}</h1>
+    <hr>
+    <h3>{{model.questionnaire.description}}</h3>
   </div>
-  {{question-list}}
+  {{question-list questions=model.questionnaire.questions}}
 </div>
